@@ -8,3 +8,8 @@ pubspec.lock
 
 # Directory created by dartdoc
 doc/api/
+
+.idea/*
+.idea
+nus-nextbus-api.iml
+analysis_options.yaml
