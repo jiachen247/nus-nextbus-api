@@ -10,8 +10,9 @@ class ShuttlesParser{
       return shuttles;
     }
 
+    // *** dart 2.0 problem | needs explicit casting
+    List<Map> jsonShuttles =  new List<Map>.from(json["ShuttleServiceResult"]["shuttles"]);
 
-    List<Map> jsonShuttles = json["ShuttleServiceResult"]["shuttles"];
 
     if(jsonShuttles == null || jsonShuttles.length == 0){
       print("[-] No buses currenlty operating from this bus stop.");

@@ -38,8 +38,9 @@ main() async {
 //  print(route);
 //  print("==========");
 
-    ShuttlesApi shuttles = await awesome.getShuttleTimings("UHALL");
+    ShuttlesApi shuttles = await awesome.getShuttleTimings("KR-MRT");
     print(shuttles);
+
 
 
 

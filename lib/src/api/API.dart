@@ -62,7 +62,6 @@ class API {
   Future<ShuttlesApi> getShuttleTimings(String busStopCode)async{
     Stream s = await _get(_formatUrl(METHOD_SHUTTLE_SERVICE, "${PARAM_BUS_STOP_CODE}=${busStopCode}"));
     Map jsonMap = JSON.decode(await s.join(""));
-    print(jsonMap);
     return ShuttlesParser.parse(busStopCode, jsonMap);
   }
 }
