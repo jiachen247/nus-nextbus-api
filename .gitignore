@@ -10,6 +10,6 @@ pubspec.lock
 doc/api/
 
 .idea/*
-.idea
+.idea/
 nus-nextbus-api.iml
 analysis_options.yaml
