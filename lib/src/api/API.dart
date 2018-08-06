@@ -4,10 +4,10 @@ import 'dart:convert';
 import 'dart:io';
 
 
-import 'package:nus_nextbus_api/src/models/BusStop.dart';
-import 'package:nus_nextbus_api/src/models/BusStops.dart';
-import 'package:nus_nextbus_api/src/models/Route.dart';
-import 'package:nus_nextbus_api/src/models/Shuttles.dart';
+import 'package:nus_nextbus_api/src/models/BusStopApi.dart';
+import 'package:nus_nextbus_api/src/models/BusStopsApi.dart';
+import 'package:nus_nextbus_api/src/models/RouteApi.dart';
+import 'package:nus_nextbus_api/src/models/ShuttlesApi.dart';
 import 'package:nus_nextbus_api/src/parser/BusStopsParser.dart';
 import 'package:nus_nextbus_api/src/parser/RouteParser.dart';
 import 'package:nus_nextbus_api/src/parser/ShuttlesParser.dart';
@@ -46,20 +46,20 @@ class API {
   }
 
 
-  Future<BusStops> getBusStop()async {
+  Future<BusStopsApi> getBusStop()async {
 
     Stream s = await _get(_formatUrl(METHOD_BUS_STOPS));
     Map jsonMap = JSON.decode(await s.join(""));
     return BusStopsParser.parse(jsonMap);
   }
 
-  Future<Route> getRoute(String serviceName)async {
+  Future<RouteApi> getRoute(String serviceName)async {
     Stream s = await _get(_formatUrl(METHOD_PICKUP_POINT, "${PARAM_ROUTE_CODE}=${serviceName}"));
     Map jsonMap = JSON.decode(await s.join(""));
     return RouteParser.parse(serviceName, jsonMap);
   }
 
-  Future<Shuttles> getShuttleTimings(String busStopCode)async{
+  Future<ShuttlesApi> getShuttleTimings(String busStopCode)async{
     Stream s = await _get(_formatUrl(METHOD_SHUTTLE_SERVICE, "${PARAM_BUS_STOP_CODE}=${busStopCode}"));
     Map jsonMap = JSON.decode(await s.join(""));
     print(jsonMap);

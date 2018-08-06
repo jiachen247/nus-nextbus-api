@@ -1,12 +1,12 @@
-import 'package:nus_nextbus_api/src/models/Route.dart';
+import 'package:nus_nextbus_api/src/models/RouteApi.dart';
 import 'package:nus_nextbus_api/src/parser/RouteStopParser.dart';
 
 class RouteParser{
 
     static bool _isEmptySet(List routeJson) => (routeJson == null);
-    static Route parse(String serviceName, Map json){
+    static RouteApi parse(String serviceName, Map json){
 
-      Route route = new Route();
+      RouteApi route = new RouteApi();
 
       route.serviceName = serviceName;
 

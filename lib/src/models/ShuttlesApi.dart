@@ -1,11 +1,11 @@
-import 'package:nus_nextbus_api/src/models/Shuttle.dart';
+import 'package:nus_nextbus_api/src/models/ShuttleApi.dart';
 
-class Shuttles {
+class ShuttlesApi {
 
   String busStopCode = "" ;
-  List<Shuttle> shuttles = [];
+  List<ShuttleApi> shuttles = [];
 
-  Shuttles(this.busStopCode);
+  ShuttlesApi(this.busStopCode);
 
   @override
   String toString() => "!!! Shuttles Object. busstopcode=${busStopCode} | length=${shuttles.length}";

@@ -2,16 +2,16 @@
 
 import 'dart:async';
 import 'package:nus_nextbus_api/src/api/API.dart';
-import 'package:nus_nextbus_api/src/models/BusStops.dart';
-import 'package:nus_nextbus_api/src/models/Route.dart';
-import 'package:nus_nextbus_api/src/models/Shuttles.dart';
+import 'package:nus_nextbus_api/src/models/BusStopsApi.dart';
+import 'package:nus_nextbus_api/src/models/RouteApi.dart';
+import 'package:nus_nextbus_api/src/models/ShuttlesApi.dart';
 
 /// Checks if you are awesome. Spoiler: you are.
 abstract class NusNextBusApiAbstract {
 
-  Future<Shuttles> getShuttleTimings(String busStopCode);
-  Future<BusStops> getBusStops();
-  Future<Route> getRoute(String serviceName);
+  Future<ShuttlesApi> getShuttleTimings(String busStopCode);
+  Future<BusStopsApi> getBusStops();
+  Future<RouteApi> getRoute(String serviceName);
 
 }
 
@@ -20,11 +20,11 @@ class NusNextBusApi extends NusNextBusApiAbstract {
   API _api = new API();
 
   @override
-  Future<BusStops> getBusStops() => _api.getBusStop();
+  Future<BusStopsApi> getBusStops() => _api.getBusStop();
 
   @override
-  Future<Route> getRoute(String serviceName) => _api.getRoute(serviceName);
+  Future<RouteApi> getRoute(String serviceName) => _api.getRoute(serviceName);
 
   @override
-  Future<Shuttles> getShuttleTimings(String busStopCode) => _api.getShuttleTimings(busStopCode);
+  Future<ShuttlesApi> getShuttleTimings(String busStopCode) => _api.getShuttleTimings(busStopCode);
 }

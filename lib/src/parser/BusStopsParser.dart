@@ -1,11 +1,11 @@
-import 'package:nus_nextbus_api/src/models/BusStops.dart';
+import 'package:nus_nextbus_api/src/models/BusStopsApi.dart';
 import 'package:nus_nextbus_api/src/parser/BusStopParser.dart';
 
 class BusStopsParser{
 
-    static BusStops parse(Map json){
+    static BusStopsApi parse(Map json){
 
-      BusStops stops = new BusStops();
+      BusStopsApi stops = new BusStopsApi();
 
       List<Map> busStopsJson = json["BusStopsResult"]["busstops"];
 

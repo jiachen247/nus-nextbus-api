@@ -1,9 +1,9 @@
-import 'package:nus_nextbus_api/src/models/Shuttles.dart';
+import 'package:nus_nextbus_api/src/models/ShuttlesApi.dart';
 import 'package:nus_nextbus_api/src/parser/ShuttleParser.dart';
 
 class ShuttlesParser{
-  static Shuttles parse(String busStopCode ,Map json){
-    Shuttles shuttles = new Shuttles(busStopCode);
+  static ShuttlesApi parse(String busStopCode ,Map json){
+    ShuttlesApi shuttles = new ShuttlesApi(busStopCode);
     String name = json["ShuttleServiceResult"]["name"];
     if(name == null ) {
       print("[-] Bus Stop (${busStopCode}) does not exist.");

@@ -1,4 +1,4 @@
-class RouteStop {
+class RouteStopApi {
 
   String stopName;
   int routeId;
@@ -6,7 +6,7 @@ class RouteStop {
   double latitude;
   double longitude;
 
-  RouteStop(this.stopName, this.routeId, this.busStopCode, this.latitude,
+  RouteStopApi(this.stopName, this.routeId, this.busStopCode, this.latitude,
       this.longitude);
 
   @override

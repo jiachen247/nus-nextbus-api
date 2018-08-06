@@ -1,7 +1,7 @@
 import 'package:nus_nextbus_api/nus_nextbus_api.dart';
-import 'package:nus_nextbus_api/src/models/BusStops.dart';
-import 'package:nus_nextbus_api/src/models/Route.dart';
-import 'package:nus_nextbus_api/src/models/Shuttles.dart';
+import 'package:nus_nextbus_api/src/models/BusStopsApi.dart';
+import 'package:nus_nextbus_api/src/models/RouteApi.dart';
+import 'package:nus_nextbus_api/src/models/ShuttlesApi.dart';
 
 main() async {
   var awesome = new NusNextBusApi();
@@ -38,7 +38,7 @@ main() async {
 //  print(route);
 //  print("==========");
 
-    Shuttles shuttles = await awesome.getShuttleTimings("UHALL");
+    ShuttlesApi shuttles = await awesome.getShuttleTimings("UHALL");
     print(shuttles);
 
 

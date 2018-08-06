@@ -1,9 +1,9 @@
-import 'package:nus_nextbus_api/src/models/RouteStop.dart';
+import 'package:nus_nextbus_api/src/models/RouteStopApi.dart';
 
-class Route {
+class RouteApi {
 
   String serviceName;
-  List<RouteStop> routeStops = [];
+  List<RouteStopApi> routeStops = [];
 
 
   @override
