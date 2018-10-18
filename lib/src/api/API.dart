@@ -39,7 +39,7 @@ class API {
       var response = await request.close();
 
       if (response.statusCode == HttpStatus.OK) {
-          Stream jsonStream = response.transform(UTF8.decoder);
+          Stream jsonStream = response.transform(utf8.decoder);
           return jsonStream;
       }
 
@@ -47,21 +47,20 @@ class API {
 
 
   Future<BusStopsApi> getBusStop()async {
-
     Stream s = await _get(_formatUrl(METHOD_BUS_STOPS));
-    Map jsonMap = JSON.decode(await s.join(""));
+    Map jsonMap = json.decode(await s.join(""));
     return BusStopsParser.parse(jsonMap);
   }
 
   Future<RouteApi> getRoute(String serviceName)async {
     Stream s = await _get(_formatUrl(METHOD_PICKUP_POINT, "${PARAM_ROUTE_CODE}=${serviceName}"));
-    Map jsonMap = JSON.decode(await s.join(""));
+    Map jsonMap = json.decode(await s.join(""));
     return RouteParser.parse(serviceName, jsonMap);
   }
 
   Future<ShuttlesApi> getShuttleTimings(String busStopCode)async{
     Stream s = await _get(_formatUrl(METHOD_SHUTTLE_SERVICE, "${PARAM_BUS_STOP_CODE}=${busStopCode}"));
-    Map jsonMap = JSON.decode(await s.join(""));
+    Map jsonMap = json.decode(await s.join(""));
     return ShuttlesParser.parse(busStopCode, jsonMap);
   }
 }

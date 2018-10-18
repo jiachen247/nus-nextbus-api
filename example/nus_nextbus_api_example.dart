@@ -5,11 +5,19 @@ import 'package:nus_nextbus_api/src/models/ShuttlesApi.dart';
 
 main() async {
   var awesome = new NusNextBusApi();
+
+
+//  BusStopsApi s = await awesome.getBusStops();
+//  print(s.busStops);
+
+
+//RouteApi r = await awesome.getRoute("C1");
+//print(r.routeStops);
 //  BusStops stops = await awesome.getBusStops();
 //  print(stops);
 
-//    Route route = await awesome.getRoute("A1");
-//    print(route);
+//    RouteApi route = await awesome.getRoute("A1");
+//    print(route.routeStops);
 //    print("==========");
 //
 //  route = await awesome.getRoute("A2");
@@ -38,8 +46,8 @@ main() async {
 //  print(route);
 //  print("==========");
 
-    ShuttlesApi shuttles = await awesome.getShuttleTimings("KR-MRT");
-    print(shuttles);
+     ShuttlesApi shuttles = await awesome.getShuttleTimings("MUSEUM");
+    print(shuttles.shuttles);
 
 
 

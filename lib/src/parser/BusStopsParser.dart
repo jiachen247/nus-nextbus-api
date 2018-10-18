@@ -7,9 +7,9 @@ class BusStopsParser{
 
       BusStopsApi stops = new BusStopsApi();
 
-      List<Map> busStopsJson = json["BusStopsResult"]["busstops"];
+      List busStopsJson = json["BusStopsResult"]["busstops"];
 
-      busStopsJson.forEach((Map busStopJson) => stops.busStops.add(BusStopParser.parse(busStopJson)) );
+      busStopsJson.forEach((busStopJson) => stops.busStops.add(BusStopParser.parse(busStopJson)) );
 
       print("[+] BusStops parsing success. length=${stops.busStops.length}");
 
